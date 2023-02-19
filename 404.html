@@ -1,0 +1,282 @@
+
+<!-- ---- Form ------------>
+<!-- Name-->
+<!-- Дата-->
+<!-- Формат-->
+<!-- Кол-во человек-->
+<!-- Time-->
+<!-- Tel-->
+<!-- Email-->
+<!-- Text-->
+<!--mixin breadcrumbs_icon-->
+<!--  svg(width="7" height="6" fill='#fff')-->
+<!--    use(href="./assets/img/sprite.svg#breadcrumbs")-->
+<!-- Карточка экскурсии (для слайдера)-->
+<!-- Карточка экскурсии-->
+<!--mixin excursions (excursionData)-->
+<!--  each card in excursionData-->
+<!--    article.excursion-card-->
+<!--      .excursion-card__image-->
+<!--        img(src=card.imgSrc)-->
+<!--        .excursion-card__badges-->
+<!--          span.excursion-card__badge=card.duration-->
+<!--      .excursion-card__content-->
+<!--        h3.excursion-card__title=card.title-->
+<!--        p.excursion-card__timetable-->
+<!--          span #{card.days}:-->
+<!--          | #{card.time}-->
+<!--        ul.excursion-card__description-list-->
+<!--          if card.descriptionList-->
+<!--            each descriptionItem in card.descriptionList-->
+<!--              li.excursion-card__description-item=descriptionItem-->
+<!--        .excursion-card__price-->
+<!--          span=card.price-->
+<!--          a.button.button--accent(href=card.link) Подробнее--><!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Что-то пошло не так</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content=""><!--favicon-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!--favicon end-->
+    <link rel="stylesheet" type="text/css" href="assets/css/libs.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"><!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+<!-- Yandex map script -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=dad86943-dfef-45bd-9c5e-c404323cb093&amp;lang=ru_RU" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="container header__container"><a class="header__logo" href="index.html"><img class="header__logo-text" src="./assets/img/icons/logo-text.svg">
+            <!--include ../../img/icons/logo-text.svg-->
+            <!--img.header__logo-icon(src="./assets/img/icons/logo-border.svg")--></a>
+          <nav class="header__nav">
+            <ul class="header__nav-top-list">
+              <li class="header__nav-top-item"><a class="header__nav-top-link" href="##"><!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><title>bus-front</title><path d="M12,16.8h1.6v9.6H12a1.6,1.6,0,0,1-1.6-1.6V18.4A1.6,1.6,0,0,1,12,16.8Zm48,0H58.4v9.6H60a1.6,1.6,0,0,0,1.6-1.6V18.4A1.6,1.6,0,0,0,60,16.8Zm-4.8-3.2V42.4A3.2,3.2,0,0,1,52,45.6v3.2A3.2,3.2,0,0,1,48.8,52H45.6a3.2,3.2,0,0,1-3.2-3.2V45.6H29.6v3.2A3.2,3.2,0,0,1,26.4,52H23.2A3.2,3.2,0,0,1,20,48.8V45.6a3.2,3.2,0,0,1-3.2-3.2V13.6A9.6,9.6,0,0,1,26.4,4H45.6A9.6,9.6,0,0,1,55.2,13.6ZM29.6,10.4H42.4V7.2H29.6ZM26.4,39.2a3.2,3.2,0,1,0-3.2,3.2A3.2,3.2,0,0,0,26.4,39.2Zm25.6,0a3.2,3.2,0,1,0-3.2,3.2A3.2,3.2,0,0,0,52,39.2Zm0-25.6H20V32.8H52V13.6Z"/></svg><span class="header__nav-top-text">Экскурсии <br> по Петербургу</span></a></li>
+              <li class="header__nav-top-item"><a class="header__nav-top-link" href="##"><?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M24.90625 -0.03125C24.863281 -0.0234375 24.820313 -0.0117188 24.78125 0C24.316406 0.105469 23.988281 0.523438 24 1L24 4.0625C19.867188 4.53125 16.546875 7.839844 16.0625 11.96875L16 11.96875C15.925781 11.960938 15.855469 11.960938 15.78125 11.96875C15.25 12.070313 14.886719 12.5625 14.945313 13.101563C15.003906 13.636719 15.460938 14.042969 16 14.03125L16 22.5L18 21.6875L18 14.03125L20 14.03125L20 20.90625L22 20.1875L22 14.03125L24 14.03125L24 19.40625L25 19L26 19.40625L26 14.03125L28 14.03125L28 20.1875L30 20.90625L30 14.03125L32 14.03125L32 21.6875L34 22.5L34 14.03125C34.402344 14.085938 34.800781 13.902344 35.019531 13.5625C35.238281 13.21875 35.238281 12.78125 35.019531 12.4375C34.800781 12.097656 34.402344 11.914063 34 11.96875L33.9375 11.96875C33.453125 7.839844 30.132813 4.53125 26 4.0625L26 1C26.011719 0.710938 25.894531 0.433594 25.6875 0.238281C25.476563 0.0390625 25.191406 -0.0585938 24.90625 -0.03125 Z M 24.8125 6C24.917969 6.015625 25.019531 6.015625 25.125 6C25.15625 6 25.1875 6 25.21875 6C28.605469 6.105469 31.273438 8.691406 31.78125 11.96875L18.21875 11.96875C18.730469 8.679688 21.410156 6.089844 24.8125 6 Z M 24.875 21C24.800781 21.011719 24.726563 21.035156 24.65625 21.0625L5.65625 28.375C5.261719 28.519531 5 28.894531 5 29.3125L5 33C5 33.550781 5.449219 34 6 34L7 34L7 49C7 49.550781 7.449219 50 8 50L19.3125 50C19.863281 50 20.3125 49.550781 20.3125 49L20.3125 43.59375C20.3125 41.339844 21.777344 39.28125 23.96875 38.875C23.980469 38.875 23.988281 38.875 24 38.875C27.019531 38.289063 29.59375 40.515625 29.59375 43.40625L29.59375 49C29.59375 49.550781 30.042969 50 30.59375 50L42 50C42.550781 50 43 49.550781 43 49L43 34L44 34C44.550781 34 45 33.550781 45 33L45 29.3125C45 28.894531 44.738281 28.519531 44.34375 28.375L25.34375 21.0625C25.195313 21.003906 25.035156 20.984375 24.875 21 Z M 25 23.0625L43 29.96875L43 32L8.1875 32C8.054688 31.972656 7.914063 31.972656 7.78125 32L7 32L7 29.96875 Z M 9 34L41 34L41 48L31.59375 48L31.59375 43.40625C31.59375 39.308594 27.792969 36.117188 23.625 36.90625C23.613281 36.910156 23.605469 36.902344 23.59375 36.90625C20.402344 37.511719 18.3125 40.460938 18.3125 43.59375L18.3125 48L9 48Z"/></svg><span class="header__nav-top-text">Экскурсии <br> в пригороды</span></a></li>
+              <li class="header__nav-top-item"><a class="header__nav-top-link" href="##"><!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path fill="none" d="M0 0h24v24H0z"/>
+        <path d="M7.617 8.712l3.205-2.328A1.995 1.995 0 0 1 12.065 6a2.616 2.616 0 0 1 2.427 1.82c.186.583.356.977.51 1.182A4.992 4.992 0 0 0 19 11v2a6.986 6.986 0 0 1-5.402-2.547l-.697 3.955 2.061 1.73 2.223 6.108-1.88.684-2.04-5.604-3.39-2.845a2 2 0 0 1-.713-1.904l.509-2.885-.677.492-2.127 2.928-1.618-1.176L7.6 8.7l.017.012zM13.5 5.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-2.972 13.181l-3.214 3.83-1.532-1.285 2.976-3.546.746-2.18 1.791 1.5-.767 1.681z"/>
+    </g>
+</svg><span class="header__nav-top-text">Школьные <br> экскурсии и туры</span></a></li>
+              <li class="header__nav-top-item"><a class="header__nav-top-link" href="##"><?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg fill="#000000" width="800px" height="800px" viewBox="-1.5 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg"><path d="M.947 9.928a2.027 2.027 0 0 1 1.347-1.891l1.094-2.824a1.307 1.307 0 0 1 1.164-.797h6.896a1.307 1.307 0 0 1 1.164.797l1.095 2.824a2.027 2.027 0 0 1 1.346 1.891v2.85a.476.476 0 0 1-.475.475h-.671v1.477a.476.476 0 0 1-.475.475h-.978a.476.476 0 0 1-.475-.475v-1.477H4.021v1.477a.476.476 0 0 1-.475.475h-.978a.476.476 0 0 1-.475-.475v-1.477h-.671a.476.476 0 0 1-.475-.475zm3.14.006a1.03 1.03 0 1 0-1.03 1.03 1.03 1.03 0 0 0 1.03-1.03zM3.53 7.911h8.938l-.89-2.297a.228.228 0 0 0-.132-.09H4.552a.228.228 0 0 0-.13.09zm10.441 2.023a1.03 1.03 0 1 0-1.029 1.03 1.03 1.03 0 0 0 1.03-1.03z"/></svg><span class="header__nav-top-text">Аренда <br> транспорта</span></a></li>
+            </ul>
+            <ul class="header__nav-list">
+              <li class="header__nav-item"><a class="header__nav-link header__nav-link--border" href="##"><span><img src="./assets/img/icons/subnav/9.svg">Тур в Санкт-Петербург</span></a>
+                <ul class="header__subnav">
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/1,6.svg"><span>Тур в Санкт-Петербург</span><small>Классические, групповые, индивидуальные</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/2.svg"><span>Корпоративные туры</span><small>Интенсивные туры и бизнес-поездки</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/3.4.8.svg"><span>Школьные туры с проживанием и питанием</span><small>Классические, 6+1, на каникулы</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/3.4.8.svg"><span>Экскурсии для школьников</span><small>Бесплатные сопровождающие</small></a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link header__nav-link--dark" href="##">Экскурсии</a>
+                <ul class="header__subnav header__subnav--excursion">
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/5.svg"><span>Новый год 2023</span><small>Новогодние экскурсии по улицам Петербурга</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/1,6.svg"><span>Экскурсии по Санкт-Петербургу</span><small>Групповые, авторские, индивидуальные</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/7.svg"><span>Индивидуальные экскурсии</span><small>По городу и пригородам</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/3.4.8.svg"><span>Экскурсии для школьников</span><small>По городу и пригородам</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/9.svg"><span>Экскурсии по пригородам</span><small>Ежедневно на автобусе или индивидуально</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/10.svg"><span>Обзорные экскурсии</span><small>Маршруты с посещением музеев</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/11.svg"><span>Водные прогулки</span><small>Обзорные по рекам и каналам</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/12.svg"><span>Пешеходные экскурсии</span><small>Лучший коктель из фасадного Петербурга</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/13.svg"><span>Экскурсии по крышам</span><small>Маршруты в центре города. Вид на все соборы</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/14.svg"><span>Экскурсии по парадным и дворам</span><small>Легендарные дворы, знаменитые парадные</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/15.svg"><span>Авторские экскурсии</span><small>Уникальные маршруты, авторские программы</small></a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link header__nav-link--border" href="##">Ещё</a>
+                <ul class="header__subnav">
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/16.svg"><span>Салют с крыши 2023</span><small>Алые Паруса, День Победы, День ВМФ</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/17.svg"><span>Свидание на крыше</span><small>Незабываемый вечер на крыше</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/18.svg"><span>Свидание-полет на самолете</span><small>Вы вдвоем над Санкт-Петербургом</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/19.svg"><span>Фотосессия на крыше</span><small>Эксклюзивные фотокарточки с видом на город</small></a></li>
+                  <li class="header__subnav-item"><a class="header__subnav-link" href="##"><img src="./assets/img/icons/subnav/20.svg"><span>Аренда катеров и яхт</span><small>Высокий комфорт. Отличный отдых на воде</small></a></li>
+                </ul>
+              </li>
+              <li class="header__nav-item desctop-hidden"><a class="header__nav-link" href="##">Контакты</a></li>
+              <li class="header__nav-item desctop-hidden"><a class="header__nav-link" href="##">Отзывы</a></li>
+              <li class="header__nav-item desctop-hidden"><a class="header__nav-link" href="##">Оплата и возврат</a></li>
+            </ul>
+          </nav>
+          <div class="header__contact"><a class="header__contact-phone" href="tel:+79111562004">
+              <svg class="header__contact-phone-icon" width="35" height="35" fill="black">
+                <use href="./assets/img/sprite.svg#phone"></use>
+              </svg><span class="header__contact-phone-number">+7 (911) 156-20-04</span><span class="header__contact-phone-text">Позвоните мне с 9 до 23</span></a></div>
+          <button class="header__burger"><span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span><span class="header__burger-line"></span></button>
+        </div>
+      </header>
+      <main>
+        <div class="page404">
+          <div class="page404__container container">
+            <h1 class="page404__title">404</h1>
+            <p class="page404__subtitle">Кажется что-то пошло не так…</p>
+            <div class="page404__buttons"><a class="button button--accent" href="index.html">На главную</a>
+              <button class="fill-form button-popup-ask">Сообщить об ошибке</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container"><a class="footer__logo" href="index.html"><img src="./assets/img/icons/logo-footer.svg"></a>
+          <div class="footer__contacts">
+            <div class="footer__social">
+              <ul class="footer__social-list">
+                <li class="footer__social-item"><a class="footer__social-link footer__icon" href="https://t.me/alinaspbtravelgroup" title="telegram" style="background-image: url('./assets/img/icons/social/telegram.svg')"></a></li>
+                <li class="footer__social-item"><a class="footer__social-link footer__icon" href="https://vk.com/spbtravelgroup" title="vk" style="background-image: url('./assets/img/icons/social/vk.svg')"></a></li>
+                <li class="footer__social-item"><a class="footer__social-link footer__icon" href="https://www.instagram.com/spbtravelgroup.ru" title="instagram" style="background-image: url('./assets/img/icons/social/instagram.svg')"></a><img class="footer__social-hint-icon" src="./assets/img/icons/important.svg"><span class="footer__social-hint-text"><span>#spbtravelgroup</span> — десятки тысяч фотографий путешественников.</span></li>
+                <li class="footer__social-item"><a class="footer__social-link footer__icon" href="https://api.whatsapp.com/send?phone=79111562004" title="whatsapp" style="background-image: url('./assets/img/icons/social/whatsapp.svg')"></a></li>
+              </ul>
+            </div><a class="footer__phone" href="tel:+79111562004">
+              <svg class="footer__icon" width="35" height="35" fill="#ffcc00">
+                <use href="./assets/img/sprite.svg#phone"></use>
+              </svg><span>+7 (911) 156-20-04</span></a>
+            <button class="footer__question"><img class="footer__icon" src="./assets/img/icons/write.svg" width="30px"><span>Задать вопрос</span></button>
+          </div>
+          <nav class="footer__nav footer__nav--1">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Индивидуальные</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Обзорные по городу</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Пригороды</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">По крышам</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Парадные и дворы</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Водные прогулки</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Пешеходные экскурсии, квесты</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Ночные и вечерние по огороду</a></li>
+            </ul>
+          </nav>
+          <nav class="footer__nav footer__nav--2">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Авторские и тематические</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Свидание на крыше</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Фотосессии на крыше</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Аренда катеров и яхт</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Ночные водные экскурсии <br> под развод мостов</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Полет-свидание на самолете</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Салют с крыши</a></li>
+            </ul>
+          </nav>
+          <nav class="footer__nav footer__nav--contacts">
+            <ul class="footer__nav-list">
+              <li class="footer__nav-item mobile-visible"><a class="footer__nav-link" href="index.html#excursions">Экскурсии</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Контакты</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Расчет тура</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Оплата и возврат</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Отзывы #spbtravelgroup</a></li>
+              <li class="footer__nav-item"><a class="footer__nav-link" href="">Расчет тура</a></li>
+            </ul>
+          </nav>
+          <div class="footer__bottom">
+            <p class="footer__copyright">&copy; ООО «СПБ Тревел Групп», 2016—<span></span></p><a class="footer__policy" href="##">Политика конфиденциальности</a><a class="footer__registry" href="##"><img src="./assets/img/icons/gerb.svg">
+              <div class="footer__registry-text">
+                <p class="footer__registry-title">Мы в реестре туроператоров</p><span class="footer__registry-desc">ООО "СПБ ТРЕВЕЛ ГРУПП" РТО 022600</span>
+              </div></a>
+          </div>
+        </div>
+      </footer>
+      <form class="form" action="" method="POST" aria-hidden="true">
+        <div class="form__container container"><span class="form__close"><svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24px" height="24px" viewBox="0 0 24 24">
+  <path d="M4.293,18.293,10.586,12,4.293,5.707A1,1,0,0,1,5.707,4.293L12,10.586l6.293-6.293a1,1,0,1,1,1.414,1.414L13.414,12l6.293,6.293a1,1,0,1,1-1.414,1.414L12,13.414,5.707,19.707a1,1,0,0,1-1.414-1.414Z"/>
+</svg>
+</span>
+          <h3 class="form__title">Ваша запись на экскурсию</h3>
+          <h4 class="form__excursion-name"></h4>
+          <div class="form__input-container">
+            <label>Как к вам обращаться ?
+              <input placeholder="Ваше имя, фамилия" name="name" pattern="^[A-Za-zА-Яа-яЁё\s]+$" autocomplete="off" maxlength="40"/>
+              <!--span.form__error.form__error--inputName Ошибка-->
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Дата экскурсии
+              <input placeholder="дд.мм.гггг" type="date" name="date" autocomplete="off" maxlength="10"/>
+              <!--span.form__error.form__error--inputDate-->
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Формат экскурсии
+              <select class="form__input-format">
+                <option value="Выберите формат экскурсии">Выберите формат экскурсии</option>
+                <option value="Групповой">Групповой (в составе общей группы)</option>
+                <option value="Индивидуально">Индивидуально (только Вы и гид)</option>
+              </select>
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Сколько у Вас человек?
+              <select class="form__input-count-people">
+                <option value="1">1 чел</option>
+                <option value="2">2 чел</option>
+                <option value="3">3 чел</option>
+                <option value="4">4 чел</option>
+                <option value="5">5 чел</option>
+                <option value="6">6 чел</option>
+                <option value="7">7 чел</option>
+                <option value="8">8 чел</option>
+                <option value="9">9 чел</option>
+                <option value="10">10 чел</option>
+                <option value="Более 10">Более 10 чел.</option>
+              </select>
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Ориентировочное время?
+              <input class="form__input-time" name="time" placeholder="c 11:00 до 23:00" autocomplete="off"/>
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Телефон
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="off"/>
+              <!--span.form__error.form__error--inputTel-->
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Почта
+              <input type="email" name="email" maxlength="40" placeholder="example@email.ru*" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"/>
+              <!--span.form__error.form__error--inputEmail-->
+            </label>
+          </div>
+          <div class="form__input-container">
+            <label>Комментарий
+              <textarea placeholder="Введите ваше сообщение..." name="message" maxlength="200" rows="4"></textarea>
+              <!--span.form__error.form__error--inputText-->
+            </label>
+          </div>
+          <button class="button button--accent" type="submit">Отправить</button>
+          <p>Нажатием на кнопку вы подтверждаете свою запись на экскурсию и обработку персональных данных в соответствии пользовательским соглашением.</p>
+        </div>
+      </form>
+      <template id="card">
+        <article class="excursion-card">
+          <div class="excursion-card__image open-form"><img src="" itemprop="image">
+            <div class="excursion-card__badges"><span class="excursion-card__badge">2.5-3 часа</span></div>
+          </div>
+          <div class="excursion-card__content">
+            <h3 class="excursion-card__title" itemprop="name">Обзорная экскурсия по городу с посещением Эрмитажа</h3>
+            <p class="excursion-card__timetable"><span class="excursion-card__timetable-days">пн - вс:</span><span class="excursion-card__timetable-time">13:00, 16:00</span></p>
+            <ul class="excursion-card__description-list">
+              <!--li.excursion-card__description-item Описание 1-->
+            </ul>
+            <div class="excursion-card__price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span>1 500 ₽</span>
+              <meta itemprop="price" content="1500">
+              <meta itemprop="priceCurrency" content="RUB"><a class="button button--accent" href="">Подробнее</a>
+            </div>
+          </div>
+        </article>
+      </template>
+      <button class="go-top" style="background-image: url('./assets/img/icons/go-top.svg')"></button>
+    </div>
+    <script src="assets/js/libs.min.js"></script>
+    <script src="assets/js/main.js" type="module"></script>
+  </body>
+</html>
