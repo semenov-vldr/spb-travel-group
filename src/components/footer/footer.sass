@@ -1,0 +1,224 @@
+.footer
+  background-color: $black
+  padding: 30px 0
+  color: #fff
+  //background-image: url('../img/footer-decor.png')
+  //background-repeat: no-repeat
+  //background-position: bottom
+  //background-size: cover
+
+  @media (max-width: 768px)
+    padding: 120px 0 20px
+
+  &__container
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 32px
+    & > *
+      width: fit-content
+    a
+      transition: $transition
+    @media (max-width: $width-mobile)
+      grid-template-columns: repeat(2, 1fr)
+    @media (max-width: 768px)
+      grid-template-columns: 1fr
+
+
+  &__logo
+    grid-column: 1 / span 1
+
+
+  &__logo img
+    width: 250px
+
+  &__contacts
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    align-self: center
+    gap: 40px
+    grid-column: 2 / span 2
+    width: 100%
+    @media (max-width: $width-mobile)
+      grid-column: 1 / -1
+      grid-row: 2
+      justify-content: flex-start
+    @media (max-width: 768px)
+      row-gap: 24px
+      flex-wrap: wrap
+
+
+  &__phone
+    display: flex
+    align-items: center
+    gap: 8px
+    font-weight: 500
+    white-space: nowrap
+    border: 1px solid #fff
+    border-radius: 8px
+    padding: 8px
+    &:hover
+      color: $yellow
+
+  &__social
+    grid-column: 1 / span 1
+
+  &__social-list
+    display: flex
+    gap: 22px
+    align-items: center
+    justify-content: space-between
+
+  &__social-item
+    position: relative
+
+  &__social-link
+    display: block
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    //width: 30px
+    //height: 30px
+
+  &__icon
+    width: 30px
+    height: 30px
+    aspect-ratio: 1 / 1
+    @media (max-width: 768px)
+      width: 35px
+      height: 35px
+
+
+
+  &__social-hint-icon
+    width: 12px
+    height: 12px
+    position: absolute
+    right: -14px
+    top: -8px
+    cursor: pointer
+    &:hover + .footer__social-hint-text
+      opacity: 1
+      visibility: visible
+
+
+  &__social-hint-text
+    position: absolute
+    z-index: 1
+    width: 150px
+    padding: 5px
+    border: 1px solid #fff
+    border-radius: 5px
+    background-color: $black
+    font-size: 12px
+    top: -12px
+    right: -7px
+    text-align: center
+    transform: translate(100%, -100%)
+    opacity: 0
+    visibility: hidden
+    span
+      color: $yellow
+
+  &__question
+    font-weight: 500
+    font-size: 17px
+    cursor: pointer
+    white-space: nowrap
+    display: flex
+    align-items: center
+    gap: 8px
+    border: 1px solid #fff
+    border-radius: 8px
+    padding: 8px
+    &:hover
+      color: $yellow
+
+  &__nav
+    grid-row: 2
+    &--1
+      grid-column: 1
+    &--2
+      grid-column: 2
+    @media (max-width: $width-mobile)
+      grid-row: 3
+    @media (max-width: 768px)
+      &--1,
+      &--2
+        display: none
+
+
+  &__nav--contacts
+    grid-column: 3
+    @media (max-width: $width-mobile)
+      grid-row: 4
+      grid-column: 1
+    @media (max-width: 768px)
+      grid-row: 3
+
+  &__nav-list
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+  &__nav-link
+    &:hover
+      color: $yellow
+
+  &__bottom
+    font-size: 14px
+    display: flex
+    gap: 40px
+    grid-column: 1 / -1
+    align-items: flex-end
+    @media (max-width: $width-mobile)
+      flex-direction: column
+      gap: 12px
+      grid-column: span 1
+      font-size: 12px
+      grid-row: 5
+      align-items: flex-start
+      @media (max-width: 768px)
+        grid-row: 4
+
+  &__copyright
+    opacity: 0.5
+    white-space: nowrap
+
+  &__policy
+    opacity: 0.5
+    text-decoration: underline
+    white-space: nowrap
+    &:hover
+      opacity: 1
+
+  &__registry
+    border: 1px solid #fff
+    border-radius: 8px
+    padding: 8px
+    justify-self: end
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 12px
+    white-space: nowrap
+    img
+      width: 40px
+      @media (max-width: 380px)
+        width: 35px
+    &-title
+      font-weight: 600
+      font-size: 14px
+      @media (max-width: 380px)
+        font-size: 12px
+    &-desc
+      font-size: 12px
+      opacity: 0.7
+      @media (max-width: 380px)
+        font-size: 10px
+    @media (max-width: $width-mobile)
+      order: -1
+      grid-column: 1
+      grid-row: 5
+      justify-self: start
+

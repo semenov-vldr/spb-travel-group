@@ -1,0 +1,63 @@
+.transport-service
+
+  &__list
+    display: flex
+    gap: 12px
+    justify-content: space-between
+    overflow-x: scroll
+    -ms-overflow-style: none
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      width: 0
+
+
+  &__item
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    border-radius: 12px
+    max-width: 260px
+    min-width: 230px
+    width: 100%
+    overflow: hidden
+
+
+    &-content
+      padding: 15px
+      display: flex
+      flex-direction: column
+
+    &-level
+      font-weight: 600
+
+    &-brand
+      font-weight: 500
+
+    &-info
+      font-size: 14px
+
+    &-footer
+      padding: 15px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-top: auto
+
+    &-price
+      font-weight: 600
+
+  &__item-image-wrapper
+    position: relative
+    background-color: $yellow
+    height: 170px
+    @extend .flex-center
+    img
+      position: absolute
+      width: 100%
+      max-width: 250px
+      height: 100%
+      object-fit: contain
+      padding: 15px
+
+
+

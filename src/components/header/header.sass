@@ -1,0 +1,335 @@
+.header
+  position: fixed
+  z-index: 25
+  width: 100%
+  background-color: $yellow
+  min-height: 90px
+  @extend .flex-center
+  word-break: break-word
+  white-space: nowrap
+  transition: 0.5s ease
+  &.js-scroll
+    transform: translateY(-100%)
+
+  @media (max-width: $width-mobile)
+    min-height: 65px
+  @media (max-width: 480px)
+    min-height: 55px
+
+  &.js-menu-open
+    .header__burger-line:nth-child(1)
+      top: 8px
+      width: 0
+      left: 50%
+    .header__burger-line:nth-child(2)
+      transform: rotate(45deg)
+    .header__burger-line:nth-child(3)
+      transform: rotate(-45deg)
+    .header__burger-line:nth-child(4)
+      top: 9px
+      width: 0
+      left: 50%
+    .header__nav
+      display: block
+
+
+
+  &__container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 20px
+    width: 100%
+    @media (max-width: $width-mobile)
+      gap: 40px
+    @media (max-width: 480px)
+      gap: 20px
+
+
+  img
+    max-height: 40px
+    @media (max-width: 600px)
+      max-height: 30px
+    @media (max-width: 550px)
+      max-height: 25px
+    @media (max-width: 500px)
+      max-height: 30px
+    @media (max-width: 380px)
+      max-height: 27px
+    @media (max-width: 340px)
+      max-height: 23px
+
+  &__nav
+    @media (max-width: $width-mobile)
+      display: none
+      background-color: #fff
+      color: $black
+      position: fixed
+      height: 100vh
+      max-height: 100vh
+      min-height: 480px
+      top: 65px
+      left: 0
+      right: 0
+      z-index: 100
+      overflow-y: auto
+      overscroll-behavior: contain
+      padding: 0 0 70px
+    @media (max-width: 480px)
+      top: 55px
+
+    &-top-list
+      padding: 25px 20px
+      display: grid
+      grid-template-columns: 1fr 1fr
+      gap: 8px
+      @media (min-width: $width-mobile)
+        display: none
+
+    &-top-item
+      padding: 10px
+      border-radius: 9px
+      border: 1px solid $black
+      width: 100%
+      text-align: center
+
+    &-top-link
+      display: flex
+      flex-direction: column
+      align-items: center
+      font-size: 14px
+      color: $black
+      word-break: break-word
+      svg
+        width: 35px
+        height: 35px
+        max-width: 35px
+        fill: $black
+
+    &-top-text
+      br
+        @media (min-width: 480px)
+          display: none
+
+
+    &-item
+      position: relative
+      @media (min-width: $width-mobile)
+        &:hover .header__subnav
+          display: grid
+      @media (max-width: $width-mobile)
+        width: 100%
+        display: flex
+        flex-direction: column
+        &.js-subnav-open .header__subnav
+          display: grid
+        &.js-subnav-open .header__nav-link::after
+          transform: rotate(0deg)
+        &.empty .header__nav-link::after
+          display: none
+
+
+    &-list
+      display: flex
+      align-items: center
+      gap: 20px
+      @media (max-width: $width-mobile)
+        flex-direction: column
+        gap: 0
+        padding: 0 20px 100px
+
+    &-link
+      position: relative
+      font-weight: 600
+      @include fontSize(14, 18)
+      text-transform: uppercase
+      min-height: 50px
+      padding: 10px
+      border-radius: 10px
+      display: flex
+      align-items: center
+      gap: 12px
+      border: 2px solid transparent
+      transition: 0.3s
+      & > span
+        display: flex
+        align-items: center
+        gap: 14px
+      @media (max-width: 1500px)
+        padding: 16px 8px
+        min-height: 40px
+      &::after
+        content: ""
+        display: inline-block
+        background-image: url('../img/icons/arrow-down.svg')
+        width: 10px
+        height: 7px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        transition: 0.3s
+        @media (max-width: $width-mobile)
+          transform: rotate(-90deg)
+      @media (min-width: $width-mobile)
+        &:hover::after
+          transform: rotate(180deg)
+        & > span img
+          display: none
+      @media (max-width: $width-mobile)
+        width: 100%
+        justify-content: space-between
+
+
+    &-link--dark
+      @media (min-width: $width-mobile)
+        background-color: $black
+        color: #fff
+        box-shadow: -1px 1px 8px rgba($black, 0.4)
+        &:hover
+          box-shadow: -2px 2px 16px rgba($black, 0.6)
+        &::after
+          background-image: url('../img/icons/arrow-down-white.svg')
+
+    &-link--border
+      @media (min-width: $width-mobile)
+        border-color: $black
+        &:hover
+          color: #fff
+          background-color: $black
+        &:hover::after
+          background-image: url('../img/icons/arrow-down-white.svg')
+
+
+  &__subnav
+    position: absolute
+    display: none
+    flex-direction: column
+    gap: 8px
+    background-color: #fff
+    padding: 16px 0
+    border-radius: 10px
+    transform: translate(-50%, 100%)
+    bottom: -12px
+    left: 50%
+    width: max-content
+    max-width: 500px
+    font-size: 18px
+    word-break: initial
+    white-space: initial
+    transition: 0.3s
+    @media (max-width: $width-mobile)
+      display: none
+      position: initial
+      background-color: transparent
+      grid-template-columns: 1fr
+      border-radius: 0
+      transform: none
+      width: 100%
+      padding: 0 0 16px
+    &--excursion
+      max-width: 650px
+      grid-template-columns: repeat(2, 300px)
+      @media (max-width: $width-mobile)
+        grid-template-columns: 1fr
+    &::before
+      position: absolute
+      content: ""
+      width: 100%
+      height: 12px
+      transform: translateY(-100%)
+      top: 0
+      left: 0
+
+    &-link
+      width: 100%
+      padding: 8px 16px
+      display: grid
+      grid-template-columns: 35px auto
+      column-gap: 14px
+      border-left: 3px solid transparent
+      border-radius: 2px
+      transition: border 0.5s ease-out
+
+      @media (max-width: $width-mobile)
+        display: flex
+        align-items: center
+      &:hover
+        border-color: $yellow
+      img
+        width: 100%
+        max-width: 35px
+        grid-column: span 1
+        grid-row: span 2
+        @media (max-width: $width-mobile)
+          max-width: 30px
+      small
+        grid-column: 2 / span 1
+        opacity: 0.8
+        @media (max-width: $width-mobile)
+          display: none
+
+  &__contact
+    font-weight: 600
+    @include fontSize(14, 20)
+    svg
+      display: none
+    @media (max-width: $width-mobile)
+      margin-left: auto
+    &-phone
+      display: flex
+      align-items: center
+      flex-direction: column-reverse
+      .header__contact-phone-number
+        background-color: $black
+        color: #fff
+        width: fit-content
+        border-radius: 8px
+        padding: 4px 8px
+      @media (max-width: 500px)
+        .header__contact-phone-text,
+        .header__contact-phone-number
+          display: none
+        svg
+          display: block
+
+  &__burger
+    width: 30px
+    height: 30px
+    position: relative
+    transform: rotate(0deg)
+    transition: .5s ease-in-out
+    cursor: pointer
+    margin-top: 9px
+    @media (min-width: $width-mobile)
+      display: none
+
+    &-line
+      display: block
+      position: absolute
+      height: 3px
+      width: 100%
+      background: $black
+      border-radius: 9px
+      left: 0
+      transform: rotate(0deg)
+      transition: .25s ease-in-out
+      &:nth-child(1)
+        top: 0
+      &:nth-child(2),
+      &:nth-child(3)
+        top: 9px
+      &:nth-child(4)
+        top: 18px
+
+
+
+
+
+
+
+
+
+
+
+
+

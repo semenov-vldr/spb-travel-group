@@ -1,0 +1,19 @@
+extends ../layouts/main
+
+block variables
+  - var title = "Новогодние экскурсии"
+  - var pageClass = ''
+  - var activePage = 'index'
+
+block content
+
+  include ../components/header-banner/header-banner
+  include ../components/filter/filter-bright-holiday/filter-bright-holiday
+  include ../components/excursion-list/novogodnie-ekskursii
+
+
+  include ../components/feedback/feedback
+
+
+
+
