@@ -21,7 +21,7 @@
       font-size: 20px
       display: block
       font-weight: 400
-      background-color: rgba($yellow, 0.3)
+      background-color: $light-yellow
       border-radius: 8px
     @media (max-width: $width-mobile)
       margin-bottom: 24px
@@ -33,7 +33,7 @@
   &__slide
     overflow: hidden
     border-radius: 16px
-    height: 400px
+    height: 450px
     img
       width: 100%
       height: 100%
@@ -53,8 +53,12 @@
     gap: 6px 12px
     margin-top: 24px
     font-size: 18px
+    i
+      font-style: normal
+      text-decoration: underline
     &-value
       white-space: nowrap
+      font-weight: 500
 
 
   &__price
@@ -67,5 +71,6 @@
 
   &__link
     margin-top: 28px
+    width: fit-content
 
 

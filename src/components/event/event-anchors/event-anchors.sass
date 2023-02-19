@@ -1,0 +1,25 @@
+.event__anchors
+  overflow: hidden
+  padding: 16px 24px
+  background-color: $light-yellow
+  border-radius: 8px
+
+  &-list
+    display: flex
+    align-items: center
+    gap: 16px
+    justify-content: space-around
+    overflow: auto
+    @media (max-width: 768px)
+      flex-wrap: wrap
+      gap: 8px 16px
+
+  &-item
+    white-space: nowrap
+
+  &-link
+    font-size: 18px
+    font-weight: 500
+    &:hover
+      opacity: 0.9
+

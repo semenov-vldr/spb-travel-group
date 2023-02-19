@@ -1,0 +1,29 @@
+.event-info
+  background-color: #fff
+  padding: 16px
+  border-radius: 8px
+
+  &__list
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 16px 36px
+    @media (max-width: 768px)
+      grid-template-columns: 1fr
+
+  &__item
+    position: relative
+    //display: flex
+    //gap: 8px
+    //flex-wrap: wrap
+    font-size: 18px
+    &-name
+      font-weight: 500
+
+    &::before
+      content: "✓"
+      color: $yellow
+      margin-right: 8px
+      font-size: 18px
+
+
+
