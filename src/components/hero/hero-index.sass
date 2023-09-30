@@ -1,7 +1,6 @@
 .hero-index
 
   .swiper-container
-    //width: 80%
     height: 95vh
     transition: opacity .6s ease, transform .3s ease
     &.nav-slider
@@ -57,7 +56,7 @@
       display: inline-flex
       flex-direction: column
       gap: 30px
-      @media (max-width: 768px)
+      @media (max-width: $width-mobile)
         top: 15%
 
       .title

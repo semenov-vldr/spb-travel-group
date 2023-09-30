@@ -3,6 +3,8 @@
   padding: 16px 24px
   background-color: $light-yellow
   border-radius: 8px
+  @media (max-width: $width-mobile)
+    padding: 8px 16px
 
   &-list
     display: flex
@@ -10,15 +12,15 @@
     gap: 16px
     justify-content: space-around
     overflow: auto
-    @media (max-width: 768px)
-      flex-wrap: wrap
+    @media (max-width: $width-mobile)
       gap: 8px 16px
+      justify-content: initial
 
   &-item
     white-space: nowrap
 
   &-link
-    font-size: 18px
+    @include fontSize(14, 18)
     font-weight: 500
     &:hover
       opacity: 0.9

@@ -5,10 +5,10 @@ new Swiper('.excursion__slider-wrapper', {
     clickable: true,
   },
 
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
 
   // Откл функционала, если слайдов меньше, чем нужно
   watchOverflow: true,

@@ -12,8 +12,10 @@
   height: 50px
   background-color: $black
   border-radius: 8px
-  @media (max-width: 768px)
+  @media (max-width: $width-mobile)
     right: 20px
+    width: 40px
+    height: 40px
   &:hover
     opacity: 0.9
   &.js-scroll-show

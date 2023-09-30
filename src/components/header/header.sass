@@ -10,8 +10,7 @@
   transition: 0.5s ease
   &.js-scroll
     transform: translateY(-100%)
-
-  @media (max-width: $width-mobile)
+  @media (max-width: $width-tablet)
     min-height: 65px
   @media (max-width: 480px)
     min-height: 55px
@@ -32,19 +31,16 @@
     .header__nav
       display: block
 
-
-
   &__container
     display: flex
     align-items: center
     justify-content: space-between
     gap: 20px
     width: 100%
-    @media (max-width: $width-mobile)
+    @media (max-width: $width-tablet)
       gap: 40px
     @media (max-width: 480px)
       gap: 20px
-
 
   img
     max-height: 40px
@@ -60,7 +56,7 @@
       max-height: 23px
 
   &__nav
-    @media (max-width: $width-mobile)
+    @media (max-width: $width-tablet)
       display: none
       background-color: #fff
       color: $black
@@ -83,7 +79,7 @@
       display: grid
       grid-template-columns: 1fr 1fr
       gap: 8px
-      @media (min-width: $width-mobile)
+      @media (min-width: $width-tablet)
         display: none
 
     &-top-item
@@ -111,13 +107,12 @@
         @media (min-width: 480px)
           display: none
 
-
     &-item
       position: relative
-      @media (min-width: $width-mobile)
+      @media (min-width: $width-tablet)
         &:hover .header__subnav
           display: grid
-      @media (max-width: $width-mobile)
+      @media (max-width: $width-tablet)
         width: 100%
         display: flex
         flex-direction: column
@@ -128,12 +123,11 @@
         &.empty .header__nav-link::after
           display: none
 
-
     &-list
       display: flex
       align-items: center
       gap: 20px
-      @media (max-width: $width-mobile)
+      @media (max-width: $width-tablet)
         flex-direction: column
         gap: 0
         padding: 0 20px 100px
@@ -156,7 +150,7 @@
         align-items: center
         gap: 14px
       @media (max-width: 1500px)
-        padding: 16px 8px
+        padding: 4px 8px
         min-height: 40px
       &::after
         content: ""
@@ -168,20 +162,20 @@
         background-repeat: no-repeat
         background-size: cover
         transition: 0.3s
-        @media (max-width: $width-mobile)
+        @media (max-width: $width-tablet)
           transform: rotate(-90deg)
-      @media (min-width: $width-mobile)
+      @media (min-width: $width-tablet)
         &:hover::after
           transform: rotate(180deg)
         & > span img
           display: none
-      @media (max-width: $width-mobile)
+      @media (max-width: $width-tablet)
         width: 100%
         justify-content: space-between
 
 
     &-link--dark
-      @media (min-width: $width-mobile)
+      @media (min-width: $width-tablet)
         background-color: $black
         color: #fff
         box-shadow: -1px 1px 8px rgba($black, 0.4)
@@ -191,14 +185,13 @@
           background-image: url('../img/icons/arrow-down-white.svg')
 
     &-link--border
-      @media (min-width: $width-mobile)
+      @media (min-width: $width-tablet)
         border-color: $black
         &:hover
           color: #fff
           background-color: $black
         &:hover::after
           background-image: url('../img/icons/arrow-down-white.svg')
-
 
   &__subnav
     position: absolute
@@ -217,7 +210,7 @@
     word-break: initial
     white-space: initial
     transition: 0.3s
-    @media (max-width: $width-mobile)
+    @media (max-width: $width-tablet)
       display: none
       position: initial
       background-color: transparent
@@ -229,7 +222,7 @@
     &--excursion
       max-width: 650px
       grid-template-columns: repeat(2, 300px)
-      @media (max-width: $width-mobile)
+      @media (max-width: $width-tablet)
         grid-template-columns: 1fr
     &::before
       position: absolute
@@ -250,7 +243,7 @@
       border-radius: 2px
       transition: border 0.5s ease-out
 
-      @media (max-width: $width-mobile)
+      @media (max-width: $width-tablet)
         display: flex
         align-items: center
       &:hover
@@ -260,12 +253,12 @@
         max-width: 35px
         grid-column: span 1
         grid-row: span 2
-        @media (max-width: $width-mobile)
+        @media (max-width: $width-tablet)
           max-width: 30px
       small
         grid-column: 2 / span 1
         opacity: 0.8
-        @media (max-width: $width-mobile)
+        @media (max-width: $width-tablet)
           display: none
 
   &__contact
@@ -273,7 +266,7 @@
     @include fontSize(14, 20)
     svg
       display: none
-    @media (max-width: $width-mobile)
+    @media (max-width: $width-tablet)
       margin-left: auto
     &-phone
       display: flex
@@ -300,7 +293,7 @@
     transition: .5s ease-in-out
     cursor: pointer
     margin-top: 9px
-    @media (min-width: $width-mobile)
+    @media (min-width: $width-tablet)
       display: none
 
     &-line
@@ -320,16 +313,3 @@
         top: 9px
       &:nth-child(4)
         top: 18px
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -20,9 +20,11 @@
     gap: 40px
     @media (max-width: $width-mobile)
       grid-template-columns: repeat(2, 1fr)
-    @media (max-width: 768px)
+      gap: 24px
+    @media (max-width: 580px)
       grid-template-columns: 1fr
       justify-items: center
+      gap: 16px
 
   &-card
     width: 100%

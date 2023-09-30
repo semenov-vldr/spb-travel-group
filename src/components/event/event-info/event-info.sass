@@ -7,15 +7,13 @@
     display: grid
     grid-template-columns: 1fr 1fr
     gap: 16px 36px
-    @media (max-width: 768px)
+    @media (max-width: $width-mobile)
       grid-template-columns: 1fr
+      gap: 8px
 
   &__item
     position: relative
-    //display: flex
-    //gap: 8px
-    //flex-wrap: wrap
-    font-size: 18px
+    @include fontSize(14, 18)
     &-name
       font-weight: 500
       margin-right: 8px

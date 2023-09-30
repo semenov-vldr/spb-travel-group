@@ -13,18 +13,18 @@
     grid-column: 2/3
     grid-row: 1/2
     font-weight: 600
-    font-size: 26px
+    @include fontSize(20, 26)
     span
       margin-top: 16px
       padding: 4px 14px
-      width: fit-content
-      font-size: 20px
+      font-size: 16px
       display: block
       font-weight: 400
       background-color: $light-yellow
       border-radius: 8px
     @media (max-width: $width-mobile)
       margin-bottom: 24px
+      text-align: center
 
   &__slider
     grid-column: 1/2
@@ -60,18 +60,18 @@
       white-space: nowrap
       font-weight: 500
 
+  &__action
+    display: flex
+    justify-content: space-between
+    gap: 24px
+    align-items: center
+    margin-top: 24px
+
   &__price
     display: inline-block
     white-space: nowrap
     gap: 24px
     padding-left: 12px
     border-left: 4px solid $yellow
-    font-size: 24px
     font-weight: 600
-    margin: 24px 0 9px
-
-  &__button
-    margin-top: 24px
-
-
-
+    @include fontSize(24, 32)

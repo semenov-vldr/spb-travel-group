@@ -34,10 +34,9 @@
       parse_mode: 'html',
       text: message,
     })
-      .then((res) => {
+      .then(() => {
         this.name.value = "";
         this.email.value = "";
-        console.log('Заявка успешно отправлена');
       })
       .catch((err) => {
         console.warn(err)
